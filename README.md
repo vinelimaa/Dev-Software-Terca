@@ -1,1 +1,0 @@
-# Dev_Software_Terca
