@@ -1,9 +1,12 @@
 import java.util.Scanner;
 
 public class Programa {
-	public static void main(String[] args) {
+	
+	
+	public static void main(String[] args){
 		
-		Scanner leitor = new Scanner(System.in) {
+		Scanner leitor = new Scanner(System.in);
+		
 		String [] matriculas = new String[5];
 		String [] nomes = new String[5];
 		
