@@ -1,24 +1,21 @@
+public class Programa{
 
-public class Programa {
-
-	public static void main(String[] args) {
+	public static void main(String[] args){
 
 		String matricula = "12345";
-		String nome = "Pedro";
-		double nota1 = 5.6;
-		double nota2 = 5.8;
-		
-		double notaFinal = (nota1 + nota2) / 2 ;
-		
-		System.out.println("Matrícula: " + matricula);
+		String nome = "Vinicius Damas";
+		double nota1 = 7.5;
+		double nota2 = 8.0;
+		double notaFinal = (nota1 + nota2)/2;
+
+		System.out.println("MatrÃ­cula: " + matricula);
 		System.out.println("Nome: " + nome);
-		if(notaFinal >= 6) {
-			System.out.println("Aprovado: (x)sim ( )não");
-		} else {
-			System.out.println("Aprovado: ( )sim (x)não");
+		if(notaFinal > 6){
+			System.out.println("Aprovado: (x) Sim ( ) NÃ£o");
+		}
+		else{
+			System.out.println("Aprovado: ( ) Sim (x) NÃ£o");
 		}
 		System.out.println("Nota final: " + notaFinal);
-		
 	}
-
 }
