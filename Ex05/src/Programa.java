@@ -6,7 +6,7 @@ public class Programa {
 
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		File arquivo = new File("C:\\_src\\ws-ter-noi\\Ex05\\src\\grupos-tabulados.txt");
+		File arquivo = new File("C:\\Users\\Vinicius\\Documents\\Dev-Software-Terca\\Ex05\\src\\grupos-tabulados.txt");
 		Scanner leitor = new Scanner(arquivo);
 		leitor.nextLine(); //descartar o título
 				

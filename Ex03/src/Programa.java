@@ -64,7 +64,7 @@ public class Programa {
 		System.out.println("Nome: " + nome);
 		
 		for(int i = 0; i < notas.length; i++) {
-			System.out.println("Nota " + (i + 1) + ":" + notas[i]);
+			System.out.println("Nota " + (i + 1) + ": " + notas[i]);
 		}
 		 
 		leitor.close();
