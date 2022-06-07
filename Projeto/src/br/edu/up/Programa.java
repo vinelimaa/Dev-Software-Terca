@@ -334,16 +334,58 @@ public class Programa {
 	public static void apagar() throws SQLException {
 		Scanner leitor = new Scanner(System.in);
 		
-		//1. Abrir conex�o com o banco de dados;
-		String url = "jdbc:sqlite:C:\\Users\\Vinicius\\Documents\\Dev-Software-Terca\\Projeto\\db\\museu_do_filme.db";		
-		Connection conexao = DriverManager.getConnection(url);
+		//1. Abrir conexão com o banco de dados;
+		Connection con = getConnection();
 		
 		//2. Criar o comando e executar o SQL;
-		Statement comando = conexao.createStatement();
-		String queryDelete = 
-				"delete from cliente where codigo = 5";
-		comando.execute(queryDelete);
+		Statement comando = con.createStatement();
+		
+		System.out.println("\n _______________________");
+		System.out.println("|____ EXCLUIR FILME ____|");
+		System.out.println("\n1 - EXCLUIR FILME POR ID");
+		System.out.println("0 - VOLTAR");
+		Filme.op = leitor.nextInt();
+		leitor.nextLine();
+		if(Filme.op==1) {
+			System.out.println("INSIRA O ID DO FILME QUE DESEJA EXCLUIR: ");
+			Filme.id = leitor.nextInt();
+			leitor.nextLine();
+			
+			Filme.querySelect = "SELECT * FROM filmes WHERE id = "+ Filme.id +";";
+			mostrar();
+			
+			System.out.println("DESEJA EXLUIR ESSE REGISTRO?");
+			System.out.println("\n1 - EXCLUIR\n0 - VOLTAR");
+			Filme.op = leitor.nextInt();
+			leitor.nextLine();
+			
+			if(Filme.op==1) {
+				Filme.querySelect = 
+						"DELETE FROM filmes WHERE id = "+ Filme.id +";";
+				comando.execute(Filme.querySelect);
+				System.out.println("\n-------------------------------");
+				System.out.println(" REGISTRO EXCLUIDO COM SUCESSO!");
+				System.out.println("-------------------------------");
+				System.out.println("\n0 - VOLTAR");
+				Filme.op = leitor.nextInt();
+				leitor.nextLine();
+				if(Filme.op==0){
+					apagar();
+				}
+				else {
+					System.out.println("\nERRO! DIGITE UMA OPÇÃO VÁLIDA!");
+				}
+			}
+			else if(Filme.op==0){
+				apagar();
+			}
+		}
+		else if(Filme.op==0) {
+			menu();
+		}
+		
 	}
+	
 	public static void menu() throws SQLException {
 		Scanner leitor = new Scanner(System.in);
 		int op = 0;
@@ -377,7 +419,7 @@ public class Programa {
 		}
 	}
 	public static Connection getConnection() throws SQLException {
-		String url = "jdbc:sqlite:C:\\Users\\Vinicius\\Documents\\Dev-Software-Terca\\Projeto\\db\\museu_do_filme.db";		
+		String url = "jdbc:sqlite:C:\\Users\\Vinicius\\Desktop\\JAVA\\Dev-Software-Terca\\Projeto\\db\\museu_do_filme.db";		
 		Connection con = DriverManager.getConnection(url);
 		
 		return con;
