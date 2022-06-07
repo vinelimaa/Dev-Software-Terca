@@ -1,7 +1,0 @@
-Valor do grupo A: 174
-Valor do grupo B: 184
-Valor do grupo C: 25
-Valor do grupo D: 59
-Valor do grupo E: 42
-Valor do grupo F: 200
-Valor total: 684
